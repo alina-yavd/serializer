@@ -1,7 +1,5 @@
 <?php
 
-require_once 'Fruit.php';
-
 function getSampleArray() {
 	return array(
 		'AT' => 'Austria',
@@ -18,4 +16,15 @@ function getSampleObject() {
 	$objects = array( $object1, $object2, $object3 );
 
 	return $objects[ array_rand( $objects ) ];
+}
+
+
+class Fruit {
+	public $name;
+	public $color;
+
+	function __construct( $name, $color = null ) {
+		$this->name  = $name;
+		$this->color = $color;
+	}
 }

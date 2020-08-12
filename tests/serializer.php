@@ -2,7 +2,7 @@
 <?php
 
 require_once __DIR__ . '/../vendor/autoload.php';
-require_once __DIR__ . '/data.php';
+require_once __DIR__ . '/sampleData.php';
 
 $array  = getSampleArray();
 $object = getSampleObject();
