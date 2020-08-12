@@ -2,19 +2,19 @@
 
 namespace App;
 
-use Symfony\Component\Serializer\Encoder\JsonEncoder;
+use Symfony\Component\Serializer\Encoder\YamlEncoder;
 use Symfony\Component\Serializer\Normalizer\ObjectNormalizer;
 use Symfony\Component\Serializer\Serializer;
 
-class JsonSerializer extends AbstractSerializer implements SerializerInterface {
+class YamlSerializer extends AbstractSerializer implements SerializerInterface {
 
 	function serialize( $data ) {
-		$encoders    = [ new JsonEncoder() ];
+		$encoders    = [ new YamlEncoder() ];
 		$normalizers = [ new ObjectNormalizer() ];
 
 		$serializer = new Serializer( $normalizers, $encoders );
 
-		return $serializer->serialize( $data, 'json' );
+		return $serializer->serialize( $data, 'yaml' );
 	}
 
 }
