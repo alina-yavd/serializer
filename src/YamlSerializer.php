@@ -1,20 +1,13 @@
 <?php
 
-namespace App;
+namespace AYS;
 
-use Symfony\Component\Serializer\Encoder\YamlEncoder;
-use Symfony\Component\Serializer\Normalizer\ObjectNormalizer;
-use Symfony\Component\Serializer\Serializer;
+use Symfony\Component\Yaml\Yaml;
 
 class YamlSerializer extends AbstractSerializer implements SerializerInterface {
 
 	function serialize( $data ) {
-		$encoders    = [ new YamlEncoder() ];
-		$normalizers = [ new ObjectNormalizer() ];
-
-		$serializer = new Serializer( $normalizers, $encoders );
-
-		return $serializer->serialize( $data, 'yaml' );
+		return Yaml::dump( $this->getData( $data ) );
 	}
 
 }

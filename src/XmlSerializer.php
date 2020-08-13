@@ -1,20 +1,23 @@
 <?php
 
-namespace App;
+namespace AYS;
 
-use Symfony\Component\Serializer\Encoder\XmlEncoder;
-use Symfony\Component\Serializer\Normalizer\ObjectNormalizer;
-use Symfony\Component\Serializer\Serializer;
+use XML_Serializer;
 
 class XmlSerializer extends AbstractSerializer implements SerializerInterface {
 
 	function serialize( $data ) {
-		$encoders    = [ new XmlEncoder() ];
-		$normalizers = [ new ObjectNormalizer() ];
+		$options = array(
+			'addDecl'        => false,
+			'indent'         => '  ',
+			'rootName'       => 'data',
+			'defaultTagName' => '',
+		);
 
-		$serializer = new Serializer( $normalizers, $encoders );
+		$xml = new XML_Serializer( $options );
+		$xml->serialize( $this->getData( $data ) );
 
-		return $serializer->serialize( $data, 'xml' );
+		return $xml->getSerializedData();
 	}
 
 }

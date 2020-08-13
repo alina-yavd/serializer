@@ -6,13 +6,11 @@ This is a serializer library for PHP arrays and objects. Supports serialization 
 Installation
 ------------
 
-For creating new project based on this template just execute the following command:
+Install library via [composer](http://getcomposer.org/download/):
 
-```bash
-$ composer create-project alina-yavd/serializer project-name
 ```
-
-> NOTE: You can add `--no-dev` right after `create-project` flag if you don't want to install dev dependencies to your project
+$ composer require alina-yavd/serializer
+```
 
 Usage
 -----

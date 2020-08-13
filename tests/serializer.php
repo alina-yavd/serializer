@@ -7,7 +7,7 @@ require_once __DIR__ . '/sampleData.php';
 $array  = getSampleArray();
 $object = getSampleObject();
 
-$json = new App\JsonSerializer();
+$json = new AYS\JsonSerializer();
 
 echo "\nArray serialized to JSON:\n";
 echo $json->serialize( $array );
@@ -16,18 +16,18 @@ echo "\n\nObject serialized to JSON:\n";
 echo $json->serialize( $object );
 
 
-$xml = new App\XmlSerializer();
+$xml = new AYS\XmlSerializer();
 
 echo "\n\nArray serialized to XML:\n";
 echo $xml->serialize( $array );
 
-echo "\nObject serialized to XML:\n";
+echo "\n\nObject serialized to XML:\n";
 echo $xml->serialize( $object );
 
 
-$yaml = new App\YamlSerializer();
+$yaml = new AYS\YamlSerializer();
 
-echo "\nArray serialized to Yaml:\n";
+echo "\n\nArray serialized to Yaml:\n";
 echo $yaml->serialize( $array );
 
 echo "\n\nObject serialized to Yaml:\n";

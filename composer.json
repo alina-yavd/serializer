@@ -7,8 +7,7 @@
   "require": {
     "php": ">=7.3",
     "ext-json": "*",
-    "symfony/property-access": "^5.1",
-    "symfony/serializer": "^5.1",
+    "pear/xml_serializer": "^0.22.0",
     "symfony/yaml": "^5.1"
   },
   "require-dev": {
@@ -17,12 +16,12 @@
   },
   "autoload": {
     "psr-4": {
-      "App\\": "src/"
+      "AYS\\": "src/"
     }
   },
   "autoload-dev": {
     "psr-4": {
-      "App\\Test\\": "tests/"
+      "AYS\\Test\\": "tests/"
     }
   },
   "scripts": {
