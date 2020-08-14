@@ -23,4 +23,6 @@ $json = new JsonSerializer();
 echo $json->serialize( $array );
 ```
 
-> NOTE: Currently `JsonSerializer`, `XmlSerializer` and `YamlSerializer` are supported.
+> NOTE: Currently `JsonSerializer`, `XmlSerializer` and `YamlSerializer` classes are available.
+>
+> You can extend library and add supported serialization formats by extending `AbstractSerializer` class.

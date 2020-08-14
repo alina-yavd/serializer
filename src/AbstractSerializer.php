@@ -2,9 +2,9 @@
 
 namespace AYS;
 
-abstract class AbstractSerializer {
+abstract class AbstractSerializer implements SerializerInterface {
 
-	abstract function serialize( $data );
+	abstract public function serialize( $data );
 
 	protected function getData( $data ) {
 		return is_object( $data ) ? get_object_vars( $data ) : $data;

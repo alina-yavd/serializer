@@ -6,7 +6,7 @@ use Symfony\Component\Yaml\Yaml;
 
 class YamlSerializer extends AbstractSerializer implements SerializerInterface {
 
-	function serialize( $data ) {
+	public function serialize( $data ) {
 		return Yaml::dump( $this->getData( $data ) );
 	}
 

@@ -6,7 +6,9 @@ use XML_Serializer;
 
 class XmlSerializer extends AbstractSerializer implements SerializerInterface {
 
-	function serialize( $data ) {
+	private $xml;
+
+	public function __construct() {
 		$options = array(
 			'addDecl'        => false,
 			'indent'         => '  ',
@@ -14,10 +16,13 @@ class XmlSerializer extends AbstractSerializer implements SerializerInterface {
 			'defaultTagName' => '',
 		);
 
-		$xml = new XML_Serializer( $options );
-		$xml->serialize( $this->getData( $data ) );
+		$this->xml = new XML_Serializer( $options );
+	}
 
-		return $xml->getSerializedData();
+	public function serialize( $data ) {
+		$this->xml->serialize( $this->getData( $data ) );
+
+		return $this->xml->getSerializedData();
 	}
 
 }

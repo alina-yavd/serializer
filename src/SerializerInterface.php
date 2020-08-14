@@ -4,6 +4,6 @@ namespace AYS;
 
 interface SerializerInterface {
 
-	function serialize( $data );
+	public function serialize( $data );
 
 }
